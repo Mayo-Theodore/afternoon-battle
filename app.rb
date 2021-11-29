@@ -1,7 +1,14 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
-get '/' do
+get '/random-cat' do
+  @random_name = ["Amigo", "Misty", "Almond"].sample
+  erb :index
+end
+
+get '/named-cat' do
+  params
+  @random_name = params[:name]
   erb :index
 end
 
@@ -15,8 +22,4 @@ end
 
 get '/hello' do
   "3rd Input"
-end
-
-get '/cat' do
-  'https://i.imgur.com/jFaSxym.png'
 end
