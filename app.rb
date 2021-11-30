@@ -6,20 +6,13 @@ get '/random-cat' do
   erb :index
 end
 
-get '/named-cat' do
-  params
+post '/named-cat' do
+  p params
   @random_name = params[:name]
   erb :index
 end
 
-get '/' do 
-  "Hello"
+get '/cat-form' do
+  erb :cat_form
 end
 
-get '/secret' do
-  "Hello World"
-end
-
-get '/hello' do
-  "3rd Input"
-end
